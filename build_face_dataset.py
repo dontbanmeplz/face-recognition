@@ -25,17 +25,19 @@ vs =  cv2.VideoCapture(args["input"])
 # vs = VideoStream(usePiCamera=True).start()
 t = 0
 success = True
-
+total = -1
 
 
 
 # loop over the frames from the video stream
 while success:
+	total += 1
 	if t != 6:
 		t += 1
 		success, frame = vs.read()
 		continue
 	else:
+		t = 0
 		pass
 	# grab the frame from the threaded video stream, clone it, (just
 	# in case we want to write it to disk), and then resize the frame
