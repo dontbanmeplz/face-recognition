@@ -14,7 +14,7 @@ ap.add_argument("-i", "--input", required=True,
 	help="path to input file")
 args = vars(ap.parse_args())
 
-os.chdir(args["output"])
+os.mkdir(args["output"])
 # load OpenCV's Haar cascade for face detection from disk
 detector = cv2.CascadeClassifier(args["cascade"])
 # initialize the video stream, allow the camera sensor to warm up,
