@@ -21,7 +21,7 @@ detector = cv2.CascadeClassifier(args["cascade"])
 # and initialize the total number of example faces written to disk
 # thus far
 print("[INFO] starting video stream...")
-vs = VideoCapture(args["input"])
+vs =  cv2.VideoCapture(args["input"])
 # vs = VideoStream(usePiCamera=True).start()
 t = 0
 success = True
