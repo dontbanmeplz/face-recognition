@@ -36,7 +36,7 @@ names = []
 for encoding in encodings:
 	# attempt to match each face in the input image to our known
 	# encodings
-  
+	name = "Unknown"
 	matches = face_recognition.compare_faces(data["encodings"],
 		encoding)
  	# check to see if we have found a match
@@ -71,5 +71,4 @@ for ((top, right, bottom, left), name) in zip(boxes, names):
 	cv2.putText(image, name, (left, y), cv2.FONT_HERSHEY_SIMPLEX,
 		0.75, (0, 255, 0), 2)
 # show the output image
-cv2.imshow("Image", image)
-cv2.waitKey(0)
+cv2.imwrite("../image2.jpg", image)
