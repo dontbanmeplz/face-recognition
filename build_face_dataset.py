@@ -45,6 +45,7 @@ while success:
 	success, frame = vs.read()
 	orig = frame.copy()
 	frame = imutils.resize(frame, width=400)
+	frame = cv2.rotate(frame, cv2.ROTATE_180)
 	# detect faces in the grayscale fram
     
 	# show the output 
