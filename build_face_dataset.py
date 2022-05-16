@@ -43,7 +43,6 @@ while success:
 	# in case we want to write it to disk), and then resize the frame
 	# so we can apply face detection faster
 	success, frame = vs.read()
-	orig = frame.copy()
 	frame = imutils.resize(frame, width=400)
 	frame = cv2.rotate(frame, cv2.ROTATE_180)
 	# detect faces in the grayscale fram
@@ -53,4 +52,4 @@ while success:
 	# so we can later process it and use it for face recognition
 	
 	p = os.path.sep.join([args["output"], "{}.png".format(str(total).zfill(5))])
-	cv2.imwrite(p, orig)
+	cv2.imwrite(p, frame)
