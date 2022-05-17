@@ -17,7 +17,7 @@ args = vars(ap.parse_args())'''
 print("[INFO] loading encodings...")
 class detect:
   def __init__(self):
-    self.data = pickle.loads(open(args["encodings"], "rb").read())
+    self.data = pickle.loads(open("encodings.pickle", "rb").read())
   def go(self, image):
     rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     #print("[INFO] recognizing faces...")
